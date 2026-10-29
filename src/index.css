@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Tailwind yalnız burada bir dəfə import olunur. Başqa .css faylı yaratmayın. */
+@theme {
+  --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #db4444;       /* bg-brand, text-brand */
+  --color-brand-dark: #a0001c;  /* hover üçün */
+  --color-accent: #00ff66;      /* yaşıl Buy Now düyməsi */
+  --color-soft: #f5f5f5;        /* kartların açıq fonu */
+}
