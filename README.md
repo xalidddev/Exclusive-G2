@@ -1,7 +1,7 @@
 # Exclusive E-Commerce (Team G2)
 
-React + Vite + **Tailwind CSS v4**. Hazır, işlək sayt: **Home, About, Contact, Sign Up** səhifələri dizayna uyğun yazılıb.
-İş bölgüsü şəkli və PDF: `docs/` qovluğunda.
+React + Vite + **Tailwind CSS v4**. Sayt: **Home, About, Contact, Sign Up**.
+Kim hansı hissəni işləyir: `docs/` qovluğundakı şəkillər (Cefer.png, Minaye.png, ...).
 
 ## İşə salmaq
 
@@ -10,68 +10,63 @@ npm install
 npm run dev
 ```
 
-Brauzerdə `http://localhost:5173` açılır. Səhifələr: `/`, `/about`, `/contact`, `/signup`.
+Səhifələr: `/` (Home), `/about`, `/contact`, `/signup`.
 
-## Kim hansı faylda işləyir
+## Struktur
 
-Hər kəsin **bir** faylı və o faylda **bir** komponenti var. Bölmələr komponentin içində ardıcıl yazılıb.
+```
+src/
+  App.jsx                  marşrutlar və səhifələrin bölmə ardıcıllığı (Home, About, Contact, Sign Up)
+  main.jsx                 BrowserRouter burada
+  index.css                Tailwind + rənglər (bg-brand və s.)
+  assets/<Ad>/             hər kəsin öz şəkilləri
+  components/
+    Cefer/   Header, Hero, FlashSales
+    Minaye/  Categories, BestSelling
+    Xalid/   MusicBanner, ExploreProducts
+    Nusret/  NewArrival, Services, Footer
+    Seccad/  OurStory, Stats, Team, Services   (About səhifəsi)
+    Elvin/   SignUp, Contact                   (Sign Up və Contact səhifələri)
+```
 
-| Ad | Fayl | Nə var |
-|---|---|---|
-| Cəfər | `src/components/Cefer.jsx` | Home: Hero + Flash Sales |
-| Minayə | `src/components/Minaye.jsx` | Home: Browse By Category + Best Selling + Music banner |
-| Xalid (Team leader) | `src/components/Xalid.jsx` | Top bar + Header + Footer (bütün səhifələrdə) |
-| Nüsrət | `src/components/Nusret.jsx` | Home: Explore Our Products + New Arrival + Services |
-| Səccad | `src/components/Seccad.jsx` | About: Our Story + Stats + Team |
-| Elvin | `src/components/Elvin.jsx` | Contact və Sign Up (`page` prop-u ilə) |
+Hər kəs yalnız öz qovluğundakı bölmə fayllarında işləyir. Bölmələrin səhifədəki sırası `App.jsx`-dədir.
 
-Şəkillər `src/assets/<Ad>/` qovluqlarındadır (hər kəsin öz qovluğu). Şəkillər dizayn faylından kəsilib, aşağı keyfiyyətlidir. Figma-dan orijinallarını ixrac edib eyni adla əvəz edə bilərsiniz.
+## Yolları necə yazmaq (import)
 
-`App.jsx` səhifələri və marşrutları birləşdirir, `index.css` Tailwind-i və rəngləri saxlayır. Bunlara toxunma, dəyişiklik lazımdırsa Xalid-ə yaz.
+Bölmə faylı `src/components/<Ad>/` içindədir, ona görə:
+
+```jsx
+import chair from '../../assets/Cefer/chair.png'     // öz şəkli:  ../../assets/<Ad>/fayl
+```
+
+Şəkil adında boşluq varsa olduğu kimi yaz: `'../../assets/Seccad/image 46.png'`.
 
 ## Qaydalar
 
-1. **Yalnız Tailwind**: stil `className` daxilində yazılır. Ayrıca `.css` faylı, `style={{}}`, Bootstrap, MUI yoxdur.
-2. Yalnız öz faylına və öz `assets` qovluğuna toxun.
-3. Hazır rənglər: `bg-brand` (#DB4444), `bg-brand-dark`, `bg-accent` (yaşıl), `bg-soft` (#F5F5F5). Font Poppins/Inter qoşulub.
-4. Şəkil import edəndə öz qovluğundan götür: `import x from '../assets/Cefer/x.jpg'`.
+1. **Yalnız Tailwind.** Ayrıca `.css` faylı, `style={{}}`, Bootstrap, MUI yoxdur.
+2. **Margin və padding yoxdur** (`m-`, `p-`, `mt-`, `px-`, `space-` və s.). Məsafələr `flex`, `gap`, `justify-*`, `items-*`, `w-`/`h-` ilə verilir.
+3. Hər kəs yalnız öz qovluğuna (`components/<Ad>/`) və öz `assets/<Ad>/` qovluğuna toxunur.
+4. Hazır rənglər: `bg-brand` (#DB4444), `bg-brand-dark`, `bg-accent` (yaşıl), `bg-soft`.
+5. Bölmənin başında `ui` obyektində təkrar olunan sinifləri saxla, JSX oxunaqlı qalsın.
 
-## GitHub-a necə yükləyək ki, heç nə itməsin
-
-**Xalid (bir dəfə, ilk yükləmə):**
+## Mövcud repo-nu yeniləmək (Xalid üçün)
 
 ```bash
-git init
+git status                                   # nə dəyişib baxırsan
 git add .
-git commit -m "Layihenin esasi"
-git branch -M main
-git remote add origin <REPO-LINKI>
-git push -u origin main
+git commit -m "Butun bolmeler ve marsrutlar elave olundu"
+git pull origin main --rebase                # başqası push edibsə əvvəl onu götür
+git push origin main
 ```
 
-**Qalan hər kəs:**
+## Komanda yeniləməni necə alır
 
 ```bash
-git clone <REPO-LINKI>
-cd Exclusive-G2
-npm install
-git checkout -b cefer          # öz adınla branch (minaye, xalid, nusret, seccad, elvin)
+git checkout main
+git pull origin main                         # yeni fayllar gəlir
+git checkout cefer                           # öz branch-ına qayıt (minaye, nusret, ...)
+git merge main                               # yenilikləri öz branch-ına qat
 ```
 
-İşləyəndən sonra:
-
-```bash
-git add src/components/Cefer.jsx src/assets/Cefer     # yalnız öz faylın və şəkillərin
-git commit -m "Cefer: Flash Sales duzeldildi"
-git pull origin main                                  # push-dan əvvəl həmişə
-git push origin cefer
-```
-
-Sonra GitHub-da **Pull Request** aç, Xalid yoxlayıb `main`-ə birləşdirir.
-
-**Niyə itmir:**
-- Hər kəsin faylı ayrıdır, bir-birinin kodunu əzmir (conflict yaranmır).
-- `node_modules` və `dist` `.gitignore`-dadır, onları yükləmə. `npm install` hər kəs özündə edir.
-- `.gitattributes` sətir sonlarını (Windows CRLF / Mac LF) eyniləşdirir və şəkilləri binary kimi saxlayır.
-- **`git push --force` heç vaxt işlətmə.** Bu, başqalarının işini silər.
-- Tez-tez commit et, gündə ən azı bir dəfə push et.
+Öz yarımçıq işin varsa əvvəl `git add . && git commit -m "yarimciq"` et ya da `git stash` yaz.
+`git push --force` heç vaxt işlətmə.
