@@ -14,7 +14,7 @@ import Stats from './components/Seccad/Stats.jsx'
 import Team from './components/Seccad/Team.jsx'
 import SeccadServices from './components/Seccad/Services.jsx'
 import SignUp from './components/Elvin/SignUp.jsx'
-import Contact from './components/Elvin/Contact.jsx'
+import Login from './components/Elvin/Login.jsx'
 
 const Home = () => {
   return (
@@ -50,11 +50,11 @@ const About = () => {
   )
 }
 
-const ContactPage = () => {
+const LoginPage = () => {
   return (
     <div className="flex w-full flex-col">
       <Header />
-      <Contact />
+      <Login />
       <Footer />
     </div>
   )
@@ -75,8 +75,8 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<ContactPage />} />
       <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   )
 }

@@ -1,22 +1,33 @@
 # Exclusive E-Commerce (Team G2)
 
-React + Vite + **Tailwind CSS v4**. Sayt: **Home, About, Contact, Sign Up**.
+React + Vite + **Tailwind CSS v4**. Sayt: **Home, About, Sign Up, Log In**.
 Kim hansı hissəni işləyir: `docs/` qovluğundakı şəkillər (Cefer.png, Minaye.png, ...).
 
 ## İşə salmaq
+
+Node.js **20.19** və ya daha yeni lazımdır (`node -v` ilə yoxla).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Səhifələr: `/` (Home), `/about`, `/contact`, `/signup`.
+Səhifələr və kimin bölməsi harada görünür:
+
+| Ünvan | Bölmələr |
+|---|---|
+| `/` | Cefer, Minaye, Xalid, Nusret (hamısı alt-alta) |
+| `/about` | Seccad |
+| `/signup` | Elvin: SignUp |
+| `/login` | Elvin: Login |
+
+Header menyusunda yalnız bu səhifələrə link ver: `/`, `/about`, `/signup`, `/login`. `React Router`-in `NavLink` və ya `Link` komponentini işlət, `<a href>` yox.
 
 ## Struktur
 
 ```
 src/
-  App.jsx                  marşrutlar və səhifələrin bölmə ardıcıllığı (Home, About, Contact, Sign Up)
+  App.jsx                  marşrutlar və səhifələrin bölmə ardıcıllığı (Home, About, Sign Up, Log In)
   main.jsx                 BrowserRouter burada
   index.css                Tailwind + rənglər (bg-brand və s.)
   assets/<Ad>/             hər kəsin öz şəkilləri
@@ -26,7 +37,7 @@ src/
     Xalid/   MusicBanner, ExploreProducts
     Nusret/  NewArrival, Services, Footer
     Seccad/  OurStory, Stats, Team, Services   (About səhifəsi)
-    Elvin/   SignUp, Contact                   (Sign Up və Contact səhifələri)
+    Elvin/   SignUp, Login                     (Sign Up və Log In səhifələri)
 ```
 
 Hər kəs yalnız öz qovluğundakı bölmə fayllarında işləyir. Bölmələrin səhifədəki sırası `App.jsx`-dədir.
