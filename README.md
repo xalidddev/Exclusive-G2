@@ -1,7 +1,7 @@
 # Exclusive E-Commerce (Team G2)
 
-React + Vite + **Tailwind CSS v4**. Sayt: **Home, About, Sign Up, Log In**.
-Kim hansı hissəni işləyir: `docs/` qovluğundakı şəkillər (Cefer.png, Minaye.png, ...).
+React + Vite + **Tailwind CSS v4**. Sayt: **Home, About, Contact, Sign Up, Log In**.
+Kim hansı hissəni işləyir: `docs/` qovluğundakı şəkillər (Home.png, Catalog.png, ...).
 
 ## İşə salmaq
 
@@ -16,12 +16,15 @@ Səhifələr və kimin bölməsi harada görünür:
 
 | Ünvan | Bölmələr |
 |---|---|
-| `/` | Cefer, Minaye, Xalid, Nusret (hamısı alt-alta) |
-| `/about` | Seccad |
-| `/signup` | Elvin: SignUp |
-| `/login` | Elvin: Login |
+| `/` | Home, Catalog, Shop, Showcase (hamısı alt-alta) |
+| `/about` | About (OurStory, Stats, Team, Services) |
+| `/contact` | Shop: Contact |
+| `/product/:id` | Shop: ProductDetail (məhsula basanda açılır) |
+| `/cart` | Shop: Cart (Add To Cart və Buy Now bura düşür) |
+| `/signup` | Auth: SignUp |
+| `/login` | Auth: Login |
 
-Header menyusunda yalnız bu səhifələrə link ver: `/`, `/about`, `/signup`, `/login`. `React Router`-in `NavLink` və ya `Link` komponentini işlət, `<a href>` yox.
+Header menyusunda yalnız bu səhifələrə link ver: `/`, `/about`, `/contact`, `/cart`, `/signup`, `/login`. `React Router`-in `NavLink` və ya `Link` komponentini işlət, `<a href>` yox.
 
 ## Struktur
 
@@ -32,12 +35,12 @@ src/
   index.css                Tailwind + rənglər (bg-brand və s.)
   assets/<Ad>/             hər kəsin öz şəkilləri
   components/
-    Cefer/   Header, Hero, FlashSales
-    Minaye/  Categories, BestSelling
-    Xalid/   MusicBanner, ExploreProducts
-    Nusret/  NewArrival, Services, Footer
-    Seccad/  OurStory, Stats, Team, Services   (About səhifəsi)
-    Elvin/   SignUp, Login                     (Sign Up və Log In səhifələri)
+    Home/   Header, Hero, FlashSales
+    Catalog/  Categories, BestSelling
+    Shop/   MusicBanner, ExploreProducts, Contact, ProductDetail, Cart (+ ProductCard, LikeButton, AddToCart, Stars, CartContext, products.js)
+    Showcase/  NewArrival, Services, Footer
+    About/  OurStory, Stats, Team, Services   (About səhifəsi)
+    Auth/   SignUp, Login                     (Sign Up və Log In səhifələri)
 ```
 
 Hər kəs yalnız öz qovluğundakı bölmə fayllarında işləyir. Bölmələrin səhifədəki sırası `App.jsx`-dədir.
@@ -47,10 +50,10 @@ Hər kəs yalnız öz qovluğundakı bölmə fayllarında işləyir. Bölmələr
 Bölmə faylı `src/components/<Ad>/` içindədir, ona görə:
 
 ```jsx
-import chair from '../../assets/Cefer/chair.png'     // öz şəkli:  ../../assets/<Ad>/fayl
+import chair from '../../assets/Home/chair.png'     // öz şəkli:  ../../assets/<Ad>/fayl
 ```
 
-Şəkil adında boşluq varsa olduğu kimi yaz: `'../../assets/Seccad/image 46.png'`.
+Şəkil adında boşluq varsa olduğu kimi yaz: `'../../assets/About/image 46.png'`.
 
 ## Qaydalar
 
@@ -60,7 +63,7 @@ import chair from '../../assets/Cefer/chair.png'     // öz şəkli:  ../../asse
 4. Hazır rənglər: `bg-brand` (#DB4444), `bg-brand-dark`, `bg-accent` (yaşıl), `bg-soft`.
 5. Bölmənin başında `ui` obyektində təkrar olunan sinifləri saxla, JSX oxunaqlı qalsın.
 
-## Mövcud repo-nu yeniləmək (Xalid üçün)
+## Mövcud repo-nu yeniləmək (Shop üçün)
 
 ```bash
 git status                                   # nə dəyişib baxırsan

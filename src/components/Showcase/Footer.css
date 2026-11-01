@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+}
+
+.ENKEDIV {
+    width: 100%;
+    max-width: none;
+    min-height: 50vh;
+    margin: 0;
+    padding: 20px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+}
+
+.EsasDiv {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .DIV {
+        width: 220px;
+        height: 280px;
+    }
+}
+
+.ILk {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 5px;
+
+    .div1h11 {
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+    }
+
+    .div1h12 {
+        font-weight: 600;
+        font-size: 19px;
+        color: white;
+    }
+
+    .div1btn1 {
+        width: 210px;
+        height: 40px;
+        border: solid 2px white;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #fafafa36;
+
+    }
+
+    .div1p11 {
+        color: white;
+    }
+}
+
+.PlaneIcon {
+    color: white;
+}
+
+.Iki {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 5px;
+    color: white;
+
+    .div2h22 {
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+    }
+
+    .div2p11 {
+        font-size: 18px;
+    }
+
+    .div2p21 {
+        font-size: 17px;
+    }
+
+    .div2p31 {
+        font-size: 17px;
+    }
+
+}
+
+.Uc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 29px;
+    padding-left: 5px;
+    color: white;
+
+    .div3h3 {
+        font-weight: 900;
+        font-size: 25px;
+    }
+}
+
+.liDivi {
+    height: 160px;
+    width: 100%;
+
+    ul {
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 10px;
+        font-size: 17px;
+    }
+}
+
+.Dord {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 29px;
+    padding-left: 5px;
+    color: white;
+
+    .div4h4 {
+        font-weight: 900;
+        font-size: 25px;
+
+    }
+
+    .IkiliDivi {
+        height: 160px;
+        width: 100%;
+
+        ul {
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            gap: 10px;
+            font-size: 17px;
+        }
+    }
+}
+
+.Bes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 6px;
+    padding-left: 5px;
+    color: white;
+
+    .div5h5 {
+        font-weight: 900;
+        font-size: 25px;
+    }
+}
+
+.KicikDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.div5p1 {
+    font-size: 13px;
+}
+
+.QR {
+    width: 80px;
+    height: 80px;
+}
+
+.KicikIconDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LapKicikIconDiv {
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.Imeyc {
+    border-radius: 4px;
+}
+
+.IconDivi {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    font-size: 22px;
+}
+
+
+.Nazikxett {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.Copyright {
+    p {
+        font-size: 18px;
+        color: white;
+    }
+}
