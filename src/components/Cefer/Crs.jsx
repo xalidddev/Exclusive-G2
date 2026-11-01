@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import Iphonediv from './Iphonediv';
+import "./Crs.css"
 
 const Crs = () => (
   <Carousel autoplay>

@@ -1,0 +1,38 @@
+/* Dairələrin ölçüsü və aralıqları */
+.ant-carousel .slick-dots li {
+  width: 15px !important;
+  height: 15px !important;
+  margin: 0 5px !important;
+}
+
+/* Bütün dairələr */
+.ant-carousel .slick-dots li button {
+  width: 15px !important;
+  height: 15px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  background: #999 !important;
+  opacity: 1 !important;
+  font-size: 0 !important;
+  transition: background 0.2s !important;
+}
+
+/* Aktiv dairə */
+.ant-carousel .slick-dots li.slick-active button {
+  background: #DB4444 !important;
+  border: 3px solid white !important;
+}
+
+/* Button-un əlavə elementlərini söndür */
+.ant-carousel .slick-dots li button::before,
+.ant-carousel .slick-dots li button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Aktiv indikatorun əlavə elementini söndür */
+.ant-carousel .slick-dots li::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}

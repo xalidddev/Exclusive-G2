@@ -9,12 +9,12 @@ const Header = () => {
       <section className="header-sec1 w-[100%] h-[50px] bg-black flex justify-center items-center gap-x-[11px] text-[15px] relative">
         <p className="text-[#FAFAFA]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
         <Link to={"/"} className="text-white border-b leading-none font-medium hover:border-b-[2px] hover:translate-y-[-1px]">ShopNow</Link>
-        <select className="w-auto text-white absolute right-[130px] border-0 focus:outline-none cursor-pointer">
+        <select className="w-auto text-white absolute right-[150px] border-0 focus:outline-none cursor-pointer">
           <option className="bg-black border-black focus:bg-black">English</option>
           <option className="bg-black border-black focus:bg-black">Azerbaijan</option>
         </select>
       </section>
-      <section className="header-sec2 h-[103px] border-b-[1px] px-[140px] flex items-center">
+      <section className="header-sec2 h-[103px] border-b-[1px] border-gray-400 px-[150px] flex items-center">
         <div className="w-[100%] h-[40px] mt-[28px] flex justify-between">
           <div className="w-[57%] h-[100%] flex justify-between items-center">
             <h1 className="text-[27px] font-semibold cursor-pointer">Exclusive</h1>
